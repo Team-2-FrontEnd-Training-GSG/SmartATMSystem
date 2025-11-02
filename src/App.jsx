@@ -6,6 +6,7 @@ import NotFound from "./pages/NotFound";
 import Register from "./pages/Register";
 
 import DashboardHome from "./pages/DashboardHome";
+import Deposit from "./pages/Deposit";
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
 
       <Route path="/dashboard" element={<Dashboard />}>
         <Route index element={<DashboardHome />} />
-        {/* <Route path="deposit" element={<Deposit />} />
+        <Route path="deposit" element={<Deposit />} />
+        {/*
         <Route path="withdraw" element={<Withdraw />} />
         <Route path="history" element={<History />} />
         <Route path="watchlist" element={<Watchlist />} />
