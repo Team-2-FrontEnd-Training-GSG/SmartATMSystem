@@ -1,6 +1,6 @@
 import { login } from "@/services/auth";
 import { saveUser } from "@/services/storage";
-import styles from "@/styles/auth/loginStyle";
+import "@/styles/auth/loginStyle.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -26,19 +26,20 @@ function Login() {
   };
 
   return (
-    <div style={styles.container}>
-      <div style={styles.card}>
-        <h2 style={styles.header}>🏦 Smart ATM Login</h2>
+    <div className="container">
+      <div className="card">
+        <h2 className="header">🏦 Smart ATM Login</h2>
         <p style={{ color: "#6c757d", marginBottom: "30px" }}>
           Please insert your credentials to proceed.
         </p>
+
         <form onSubmit={handleLogin}>
           <input
             type="text"
             placeholder="Account Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            style={styles.input}
+            className="input"
             required
           />
           <input
@@ -46,25 +47,21 @@ function Login() {
             placeholder="******"
             value={pin}
             onChange={(e) => setPin(e.target.value)}
-            style={styles.input}
+            className="input"
             required
           />
-          <button type="submit" style={styles.button}>
+          <button type="submit" className="button">
             Continue to Dashboard
           </button>
         </form>
 
-        {error && <p style={styles.error}>⚠️ {error}</p>}
+        {error && <p className="error">⚠️ {error}</p>}
 
-        <div style={styles.link}>
+        <div className="link">
           <p>Don't have an account?</p>
           <button
             onClick={() => navigate("/signup")}
-            style={{
-              ...styles.button,
-              backgroundColor: "#6c757d",
-              marginTop: "10px",
-            }}
+            className="button secondary-btn"
           >
             Create Account
           </button>

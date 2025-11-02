@@ -1,6 +1,6 @@
 import { register } from "@/services/auth";
 import { saveUser } from "@/services/storage";
-import styles from "@/styles/auth/loginStyle"; // reuse same design
+import "@/styles/auth/loginStyle.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -20,6 +20,7 @@ function Signup() {
         setError("Please fill in all required fields.");
         return;
       }
+
       const newUser = {
         id: Date.now(),
         user_name: username,
@@ -31,6 +32,7 @@ function Signup() {
         balance: 0,
         transactions: [],
       };
+
       await register(newUser);
       saveUser(newUser);
       navigate("/dashboard");
@@ -40,19 +42,20 @@ function Signup() {
   };
 
   return (
-    <div style={styles.container}>
-      <div style={styles.card}>
-        <h2 style={styles.header}>📝 Create New Account</h2>
+    <div className="container">
+      <div className="card">
+        <h2 className="header">📝 Create New Account</h2>
         <p style={{ color: "#6c757d", marginBottom: "30px" }}>
           Please fill in your details to create an account.
         </p>
+
         <form onSubmit={handleSignup}>
           <input
             type="text"
             placeholder="First Name"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
-            style={styles.input}
+            className="input"
             required
           />
           <input
@@ -60,7 +63,7 @@ function Signup() {
             placeholder="Last Name"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
-            style={styles.input}
+            className="input"
             required
           />
           <input
@@ -68,7 +71,7 @@ function Signup() {
             placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            style={styles.input}
+            className="input"
             required
           />
           <input
@@ -76,7 +79,7 @@ function Signup() {
             placeholder="PIN (e.g. 1234)"
             value={pin}
             onChange={(e) => setPin(e.target.value)}
-            style={styles.input}
+            className="input"
             required
           />
           <input
@@ -84,25 +87,21 @@ function Signup() {
             placeholder="Birthday"
             value={birthday}
             onChange={(e) => setBirthday(e.target.value)}
-            style={styles.input}
+            className="input"
             required
           />
-          <button type="submit" style={styles.button}>
+          <button type="submit" className="button">
             Sign Up
           </button>
         </form>
 
-        {error && <p style={styles.error}>⚠️ {error}</p>}
+        {error && <p className="error">⚠️ {error}</p>}
 
-        <div style={styles.link}>
+        <div className="link">
           <p>Already have an account?</p>
           <button
             onClick={() => navigate("/login")}
-            style={{
-              ...styles.button,
-              backgroundColor: "#6c757d",
-              marginTop: "10px",
-            }}
+            className="button secondary-btn"
           >
             Go to Login
           </button>
