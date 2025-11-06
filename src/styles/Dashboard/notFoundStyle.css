@@ -1,0 +1,121 @@
+.nf-wrap {
+  min-height: calc(100vh - 120px);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 24px;
+}
+
+.nf-card {
+  width: 100%;
+  max-width: 720px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(17, 24, 39, 0.06);
+}
+
+.nf-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 10px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  color: #1f2937;
+  background: #eef2ff;
+}
+
+.nf-title {
+  margin: 6px 0 6px;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: #111827;
+}
+
+.nf-sub {
+  margin: 0 0 18px;
+  color: #6b7280;
+}
+
+.nf-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #111827;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.05s ease, background 0.2s ease, border-color 0.2s ease;
+}
+.nf-btn:active {
+  transform: translateY(1px);
+}
+
+.nf-btn-primary {
+  background: #111827;
+  color: #fff;
+  border-color: #111827;
+}
+.nf-btn-primary:hover {
+  background: #0b1220;
+}
+
+.nf-btn-secondary:hover {
+  background: #f9fafb;
+}
+
+.nf-divider {
+  height: 1px;
+  background: #f3f4f6;
+  margin: 18px 0;
+}
+
+.nf-quick-title {
+  margin: 0 0 10px;
+  font-weight: 700;
+  color: #374151;
+}
+
+.nf-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+@media (min-width: 640px) {
+  .nf-links {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.nf-link {
+  display: block;
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+  color: #1f2937;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.05s ease;
+  text-align: center;
+}
+.nf-link:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+.nf-link:active {
+  transform: translateY(1px);
+}

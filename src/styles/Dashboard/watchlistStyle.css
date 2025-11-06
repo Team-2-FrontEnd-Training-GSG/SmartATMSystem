@@ -1,0 +1,107 @@
+.watchlist-page .page-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.watchlist-container {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 992px) {
+  .watchlist-container {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+.watchlist-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 20px;
+}
+.watchlist-card.secondary {
+  background: #fafafa;
+}
+.card-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+.card-subtitle {
+  color: #6b7280;
+  margin: 0 0 16px;
+}
+.card-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.currency-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.currency-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+.currency-row.active {
+  border-color: #f59e0b;
+  background: #fff7ed;
+}
+.currency-info {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.currency-code {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.currency-rate {
+  color: #374151;
+  font-variant-numeric: tabular-nums;
+}
+.star-button,
+.remove-button,
+.clear-button {
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.star-button.star-active {
+  background: #fef3c7;
+  border-color: #f59e0b;
+}
+.remove-button {
+  background: #fee2e2;
+  border-color: #fecaca;
+}
+.clear-button {
+  background: #f3f4f6;
+}
+.empty-state {
+  text-align: center;
+  color: #6b7280;
+  padding: 24px;
+}
+.empty-state .helper {
+  font-size: 12px;
+  margin-top: 6px;
+}

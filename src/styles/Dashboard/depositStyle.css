@@ -1,0 +1,373 @@
+.deposit-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  color: #374151;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.back-button:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.deposit-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .deposit-container {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.deposit-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 0.5rem 0;
+}
+
+.card-subtitle {
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0 0 2rem 0;
+}
+
+.current-balance {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f0fdf4;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.balance-label {
+  font-size: 0.875rem;
+  color: #059669;
+  font-weight: 500;
+}
+
+.balance-amount {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #059669;
+}
+
+.deposit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.875rem 4rem 0.875rem 1rem;
+  font-size: 1.125rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  transition: all 0.2s;
+  font-weight: 600;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.form-input:disabled {
+  background-color: #f9fafb;
+  cursor: not-allowed;
+}
+
+.input-currency {
+  position: absolute;
+  right: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.quick-amounts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.quick-amounts-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+}
+
+.quick-amounts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .quick-amounts-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.quick-amount-btn {
+  padding: 0.75rem;
+  background-color: #f9fafb;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  color: #374151;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.quick-amount-btn:hover:not(:disabled) {
+  background-color: #f0fdf4;
+  border-color: #10b981;
+  color: #059669;
+}
+
+.quick-amount-btn.active {
+  background-color: #d1fae5;
+  border-color: #10b981;
+  color: #059669;
+}
+
+.quick-amount-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.balance-preview {
+  padding: 1.25rem;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.preview-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.preview-row span:last-child {
+  font-weight: 600;
+  color: #374151;
+}
+
+.deposit-row span:last-child {
+  color: #10b981;
+}
+
+.preview-divider {
+  height: 1px;
+  background-color: #e5e7eb;
+  margin: 0.25rem 0;
+}
+
+.total-row {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.total-row span {
+  color: #1f2937;
+}
+
+.total-row span:last-child {
+  color: #10b981;
+  font-size: 1.125rem;
+}
+
+.alert {
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.alert p {
+  margin: 0;
+}
+
+.alert-error {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.alert-success {
+  background-color: #f0fdf4;
+  color: #059669;
+  border: 1px solid #bbf7d0;
+}
+
+.submit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 0.5rem;
+}
+
+.deposit-button {
+  background-color: #10b981;
+  color: white;
+}
+
+.deposit-button:hover:not(:disabled) {
+  background-color: #059669;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.spinner-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.info-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+
+.info-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 1rem 0;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.info-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.info-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .deposit-card {
+    padding: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .quick-amounts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .quick-amount-btn {
+    font-size: 0.75rem;
+    padding: 0.625rem 0.5rem;
+  }
+}
