@@ -1,7 +1,7 @@
 .dashboard-container {
   display: flex;
   height: 100vh;
-  background-color: #f9fafb;
+  background-color: var(--bg);
   overflow: hidden;
 }
 .mobile-menu-button {
@@ -14,8 +14,8 @@
   justify-content: center;
   width: 48px;
   height: 48px;
-  background-color: white;
-  border: 1px solid #e5e7eb;
+  background-color: var(--card-bg);
+  border: 1px solid var(--muted);
   border-radius: 12px;
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -35,8 +35,8 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  background-color: white;
-  border-right: 1px solid #e5e7eb;
+  background-color: var(--card-bg);
+  border-right: 1px solid var(--muted);
   width: 260px;
 }
 
@@ -52,7 +52,7 @@
 
 .sidebar-header {
   padding: 1.5rem;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--muted);
 }
 
 .mobile-sidebar-header {
@@ -64,7 +64,7 @@
 .sidebar-logo {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #2563eb;
+  color: var(--accent);
   margin: 0;
 }
 
@@ -77,12 +77,12 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  color: #374151;
+  color: var(--text);
   transition: background-color 0.2s;
 }
 
 .close-button:hover {
-  background-color: #f3f4f6;
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 .user-profile {
@@ -162,13 +162,13 @@
 }
 
 .nav-item-active {
-  background-color: #eff6ff;
-  color: #2563eb;
+  background-color: rgba(37, 99, 235, 0.08);
+  color: var(--accent);
 }
 
 .sidebar-footer {
   padding: 1rem;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid var(--muted);
 }
 
 .logout-button {
@@ -180,7 +180,7 @@
   background: transparent;
   border: none;
   border-radius: 8px;
-  color: #dc2626;
+  color: var(--negative);
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s;
@@ -296,8 +296,8 @@
 }
 
 .birthday-button {
-  background-color: #2563eb;
-  color: white;
+  background-color: var(--accent);
+  color: var(--card-bg);
   padding: 0.625rem 1.5rem;
   border: none;
   border-radius: 8px;
@@ -319,7 +319,7 @@
 }
 
 .sidebar-nav::-webkit-scrollbar-thumb {
-  background: #d1d5db;
+  background: var(--muted);
   border-radius: 3px;
 }
 
@@ -332,14 +332,14 @@
 }
 
 .main-content::-webkit-scrollbar-track {
-  background: #f9fafb;
+  background: var(--bg);
 }
 
 .main-content::-webkit-scrollbar-thumb {
-  background: #d1d5db;
+  background: var(--muted);
   border-radius: 4px;
 }
 
 .main-content::-webkit-scrollbar-thumb:hover {
-  background: #9ca3af;
+  background: var(--muted);
 }

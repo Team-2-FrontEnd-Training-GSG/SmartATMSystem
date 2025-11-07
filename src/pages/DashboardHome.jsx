@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ToggleButton from "@/components/ToggleButton";
 
 function DashboardHome() {
   const [userData, setUserData] = useState(null);
@@ -124,12 +125,17 @@ function DashboardHome() {
   return (
     <div className="dashboard-home">
       <div className="welcome-section">
-        <h1 className="welcome-title">
-          Welcome back, {userData.first_name}! 👋
-        </h1>
-        <p className="welcome-subtitle">
-          Here's what's happening with your account today
-        </p>
+        <div className="welcome-text">
+          <h1 className="welcome-title">
+            Welcome back, {userData.first_name}! 👋
+          </h1>
+          <p className="welcome-subtitle">
+            Here's what's happening with your account today
+          </p>
+        </div>
+        <div className="welcome-toggle">
+          <ToggleButton />
+        </div>
       </div>
 
       <div className="stats-grid">

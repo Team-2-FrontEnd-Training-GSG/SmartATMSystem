@@ -4,30 +4,30 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #f5f5f5;
+  background-color: var(--bg);
 }
 
 .card {
-  background-color: #ffffff;
+  background-color: var(--card-bg);
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   max-width: 400px;
   width: 90%;
   text-align: center;
-  border-top: 5px solid #007bff;
+  border-top: 5px solid var(--accent);
 }
 
 .header {
   margin-bottom: 30px;
-  color: #333;
+  color: var(--text);
 }
 
 .input {
   width: 100%;
   padding: 12px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--muted);
   border-radius: 6px;
   box-sizing: border-box;
   font-size: 16px;
@@ -36,8 +36,8 @@
 .button {
   width: 100%;
   padding: 12px;
-  background-color: #007bff;
-  color: white;
+  background-color: var(--accent);
+  color: var(--card-bg);
   border: none;
   border-radius: 6px;
   font-size: 18px;
@@ -46,11 +46,11 @@
 }
 
 .button:hover {
-  background-color: #0069d9;
+  background-color: #1d4ed8;
 }
 
 .error {
-  color: #dc3545;
+  color: var(--negative);
   margin-top: 15px;
   font-weight: bold;
 }

@@ -12,8 +12,8 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.625rem 1rem;
-  background-color: white;
-  border: 1px solid #e5e7eb;
+  background-color: var(--card-bg);
+  border: 1px solid var(--muted);
   border-radius: 8px;
   color: #374151;
   font-weight: 500;
@@ -22,8 +22,8 @@
 }
 
 .back-button:hover {
-  background-color: #f9fafb;
-  border-color: #d1d5db;
+  background-color: var(--bg);
+  border-color: var(--muted);
 }
 
 .deposit-container {
@@ -39,7 +39,7 @@
 }
 
 .deposit-card {
-  background: white;
+  background: var(--card-bg);
   border-radius: 16px;
   padding: 2rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -53,20 +53,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--card-bg);
   margin-bottom: 1.5rem;
 }
 
 .card-title {
   font-size: 1.875rem;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--text);
   margin: 0 0 0.5rem 0;
 }
 
 .card-subtitle {
   font-size: 1rem;
-  color: #6b7280;
+  color: var(--muted);
   margin: 0 0 2rem 0;
 }
 
@@ -75,14 +75,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #f0fdf4;
+  background-color: rgba(16, 185, 129, 0.06);
   border-radius: 12px;
   margin-bottom: 2rem;
 }
 
 .balance-label {
   font-size: 0.875rem;
-  color: #059669;
+  color: var(--positive);
   font-weight: 500;
 }
 
@@ -107,7 +107,7 @@
 .form-label {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #374151;
+  color: var(--text);
 }
 
 .input-wrapper {
@@ -120,7 +120,7 @@
   width: 100%;
   padding: 0.875rem 4rem 0.875rem 1rem;
   font-size: 1.125rem;
-  border: 2px solid #e5e7eb;
+  border: 2px solid var(--muted);
   border-radius: 12px;
   transition: all 0.2s;
   font-weight: 600;
@@ -133,7 +133,7 @@
 }
 
 .form-input:disabled {
-  background-color: #f9fafb;
+  background-color: var(--bg);
   cursor: not-allowed;
 }
 
@@ -142,7 +142,7 @@
   right: 1rem;
   font-size: 1rem;
   font-weight: 600;
-  color: #6b7280;
+  color: var(--muted);
 }
 
 .quick-amounts {
@@ -258,15 +258,15 @@
 }
 
 .alert-error {
-  background-color: #fef2f2;
-  color: #dc2626;
-  border: 1px solid #fecaca;
+  background-color: rgba(220, 38, 38, 0.06);
+  color: var(--negative);
+  border: 1px solid rgba(220, 38, 38, 0.18);
 }
 
 .alert-success {
-  background-color: #f0fdf4;
-  color: #059669;
-  border: 1px solid #bbf7d0;
+  background-color: rgba(16, 185, 129, 0.06);
+  color: var(--positive);
+  border: 1px solid rgba(16, 185, 129, 0.18);
 }
 
 .submit-button {
@@ -285,14 +285,14 @@
 }
 
 .deposit-button {
-  background-color: #10b981;
-  color: white;
+  background-color: var(--positive);
+  color: var(--card-bg);
 }
 
 .deposit-button:hover:not(:disabled) {
-  background-color: #059669;
+  background-color: var(--positive);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
 }
 
 .submit-button:disabled {
@@ -311,7 +311,7 @@
   }
 }
 .info-card {
-  background: white;
+  background: var(--card-bg);
   border-radius: 16px;
   padding: 1.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -321,7 +321,7 @@
 .info-title {
   font-size: 1.125rem;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text);
   margin: 0 0 1rem 0;
 }
 
@@ -339,7 +339,7 @@
   align-items: flex-start;
   gap: 0.5rem;
   font-size: 0.875rem;
-  color: #6b7280;
+  color: var(--muted);
   padding-left: 1.5rem;
   position: relative;
 }
@@ -348,7 +348,7 @@
   content: "•";
   position: absolute;
   left: 0;
-  color: #10b981;
+  color: var(--positive);
   font-weight: 700;
   font-size: 1.25rem;
 }
