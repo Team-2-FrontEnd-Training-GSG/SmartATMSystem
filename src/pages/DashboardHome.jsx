@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import ToggleButton from "@/components/ToggleButton";
+import BirthdayPopup from "@/components/BirthdayPopup";
 
 function DashboardHome() {
   const [userData, setUserData] = useState(null);
@@ -30,7 +31,7 @@ function DashboardHome() {
       const data = await getUser();
       setUserData(data);
       setError(null);
-        toast.success("Dashboard data loaded successfully");
+      toast.success("Dashboard data loaded successfully");
     } catch (err) {
       setError("Failed to load user data. Please try again.");
       toast.error("Failed to load dashboard data");
@@ -127,6 +128,7 @@ function DashboardHome() {
 
   return (
     <div className="dashboard-home">
+      <BirthdayPopup user={userData} />
       <div className="welcome-section">
         <div className="welcome-text">
           <h1 className="welcome-title">
