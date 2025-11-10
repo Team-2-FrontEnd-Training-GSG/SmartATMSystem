@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import ToggleButton from "@/components/ToggleButton";
 
 function DashboardHome() {
@@ -29,8 +30,10 @@ function DashboardHome() {
       const data = await getUser();
       setUserData(data);
       setError(null);
+        toast.success("Dashboard data loaded successfully");
     } catch (err) {
       setError("Failed to load user data. Please try again.");
+      toast.error("Failed to load dashboard data");
       console.error(err);
     } finally {
       setLoading(false);

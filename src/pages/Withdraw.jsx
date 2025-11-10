@@ -3,6 +3,7 @@ import { AlertCircle, ArrowLeft, Loader, TrendingDown } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getUser, withdrawMoney } from "../services/dashboard";
+import { toast } from "react-toastify";
 
 function Withdraw() {
   const [amount, setAmount] = useState("");
@@ -22,29 +23,29 @@ function Withdraw() {
     const withdrawAmount = parseFloat(amount);
 
     if (!amount || isNaN(withdrawAmount)) {
-      setError("Please enter a valid amount");
+  toast.error("Please enter a valid amount");
       return;
     }
 
     if (withdrawAmount <= 0) {
-      setError("Amount must be greater than zero");
+  toast.error("Amount must be greater than zero");
       return;
     }
 
     if (withdrawAmount > user.balance) {
-      setError("Insufficient balance for this withdrawal");
+  toast.error("Insufficient balance for this withdrawal");
       return;
     }
 
     if (withdrawAmount > 50000) {
-      setError("Maximum withdrawal amount is 50,000 ILS per transaction");
+  toast.error("Maximum withdrawal amount is 50,000 ILS per transaction");
       return;
     }
 
     try {
       setLoading(true);
       await withdrawMoney(withdrawAmount, currency);
-      setSuccess(true);
+  toast.success(`Withdrawal of ${withdrawAmount} ${currency} successful!`);
       setAmount("");
 
       setTimeout(() => {
@@ -187,18 +188,6 @@ function Withdraw() {
                   </div>
                 </div>
               )}
-
-            {error && (
-              <div className="alert alert-error">
-                <p>{error}</p>
-              </div>
-            )}
-
-            {success && (
-              <div className="alert alert-success">
-                <p>✓ Withdrawal successful! Redirecting...</p>
-              </div>
-            )}
 
             <button
               type="submit"

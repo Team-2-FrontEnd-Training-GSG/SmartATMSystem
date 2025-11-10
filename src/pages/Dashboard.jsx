@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
 
 function Dashboard() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -25,6 +27,7 @@ function Dashboard() {
   const handleLogout = () => {
     localStorage.removeItem("user");
     sessionStorage.removeItem("birthdayShown");
+    toast.info("Logged out successfully");
     navigate("/login");
   };
 
@@ -40,6 +43,26 @@ function Dashboard() {
   if (!user) {
     return null;
   }
+
+  useEffect(() => {
+    if (!user) return;
+    const today = new Date();
+    const birthDate = new Date(user.birth_date);
+
+    const isBirthday =
+      today.getDate() === birthDate.getDate() &&
+      today.getMonth() === birthDate.getMonth();
+    const birthdayShown = sessionStorage.getItem("birthdayShown");
+
+    if (isBirthday && !birthdayShown) {
+      toast.success(`Happy Birthday ${user.first_name}!`, {
+        autoClose: 4000,
+        theme: "colored",
+      });
+
+      sessionStorage.setItem("birthdayShown", "true");
+    }
+  }, [user]);
 
   return (
     <div className="dashboard-container">
@@ -171,3 +194,4 @@ function Dashboard() {
 }
 
 export default Dashboard;
+

@@ -3,7 +3,7 @@ import { ArrowLeft, Loader, TrendingUp } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { depositMoney, getUser } from "../services/dashboard";
-
+import { notifySuccess, notifyError } from "../utilstoast";
 function Deposit() {
   const [amount, setAmount] = useState("");
   const [currency] = useState("ILS");
@@ -22,16 +22,19 @@ function Deposit() {
 
     if (!amount || isNaN(depositAmount)) {
       setError("Please enter a valid amount");
+        notifyError("Please enter a valid amount");
       return;
     }
 
     if (depositAmount <= 0) {
       setError("Amount must be greater than zero");
+        notifyError("Please enter a valid amount");
       return;
     }
 
     if (depositAmount > 100000) {
       setError("Maximum deposit amount is 100,000 ILS");
+        notifyError("Please enter a valid amount");
       return;
     }
 
@@ -39,15 +42,18 @@ function Deposit() {
       setLoading(true);
       await depositMoney(depositAmount, currency);
       setSuccess(true);
+      notifySuccess(`Deposit successful! ${depositAmount} ${currency} added.`);
       setAmount("");
       setTimeout(() => {
         navigate("/dashboard");
       }, 2000);
     } catch (err) {
       setError(err.message || "Failed to deposit money. Please try again.");
+        notifyError("Failed to deposit money. Please try again later.");
     } finally {
       setLoading(false);
     }
+    
   };
 
   const quickAmounts = [50, 100, 200, 500, 1000];
